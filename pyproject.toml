@@ -5,3 +5,21 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
+
+[tool.ruff] # ruffの全体設定
+# 1行の最大文字数を127に設定
+line-length = 127
+
+[tool.ruff.lint] # ruffのリンター設定
+# 有効にするルールセット
+select = ["E", "F", "I"]
+
+# 無視するルール
+ignore = []
+
+[tool.ruff.format]
+# ruffのフォーマットの設定
+# シングルクオートを使用
+quote-style = "single"
+
+[tool.ty] # tyのの設定をここに書く
