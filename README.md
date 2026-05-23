@@ -1,7 +1,8 @@
 # 100 Knocks Data Analytics
 
 データ分析 100 本ノックを `uv` と `marimo` で進めるための作業用リポジトリです。  
-各章の演習を `src/` 配下に置き、`marimo` notebook として VS Code から編集・実行する前提で構成しています。
+各章の演習を `src/` 配下に置き、`marimo` notebook として VS Code から編集・実行する前提で構成しています。  
+現在は `chapter1` と `chapter2` まで完了しています。
 
 ## 目的
 
@@ -23,6 +24,11 @@ src/
 │       ├── transaction_detail_1.csv
 │       └── transaction_detail_2.csv
 ├── chapter2/
+│   ├── practice_chapter2.py
+│   └── data/
+│       ├── dump_data.csv
+│       ├── kokyaku_daicho.xlsx
+│       └── uriage.csv
 ├── chapter3/
 ├── chapter4/
 ├── chapter5/
@@ -53,14 +59,19 @@ Python のバージョンは [pyproject.toml](/home/toyuki/Documents/practice/10
 
 ## 実行方法
 
-`chapter1` の notebook を起動する例です。
+完了済みの章:
+
+- `chapter1`: [src/chapter1/chapter1_practice.py](/home/toyuki/Documents/practice/100knocks-data_analytics/src/chapter1/chapter1_practice.py:1)
+- `chapter2`: [src/chapter2/practice_chapter2.py](/home/toyuki/Documents/practice/100knocks-data_analytics/src/chapter2/practice_chapter2.py:1)
+
+`chapter2` の notebook を起動する例です。
 
 ```bash
-cd src/chapter1
-uv run marimo edit chapter1_practice.py
+cd src/chapter2
+uv run marimo edit practice_chapter2.py
 ```
 
-このファイルは `data/` を相対パスで読むため、`src/chapter1` で起動するのが安全です。
+各 notebook は `data/` を相対パスで読むため、対象の章ディレクトリで起動するのが安全です。
 
 ## VS Code での使い方
 
@@ -73,7 +84,8 @@ uv run marimo edit chapter1_practice.py
 
 1. VS Code でこのリポジトリを開く
 2. `Python: Select Interpreter` で `.venv` を選ぶ
-3. [src/chapter1/chapter1_practice.py](/home/toyuki/Documents/practice/100knocks-data_analytics/src/chapter1/chapter1_practice.py:1) を開く
+3. 完了済みの notebook を開く
+   例: [src/chapter2/practice_chapter2.py](/home/toyuki/Documents/practice/100knocks-data_analytics/src/chapter2/practice_chapter2.py:1)
 4. `marimo` 拡張で notebook 表示に切り替える
 
 `.vscode/settings.json` を使う場合は、次の設定が実用的です。
