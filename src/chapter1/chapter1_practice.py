@@ -332,7 +332,6 @@ def _(graph_data: "pd.DataFrame", plt):
     plt.title("Sales of PC-A")
     plt.legend()
     plt.show()
-
     return
 
 
