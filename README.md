@@ -47,15 +47,23 @@ src/
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-このリポジトリで仮想環境を作成し、必要なパッケージを入れます。
+このリポジトリで仮想環境を作成し、ロックファイルに従って必要なパッケージを入れます。
 
 ```bash
 uv venv
-uv add marimo pandas matplotlib
+uv sync --locked
 ```
 
 Python のバージョンは [pyproject.toml](/home/toyuki/Documents/practice/100knocks-data_analytics/pyproject.toml:1) の設定に従います。  
 別バージョンを明示したい場合は、先に `uv python install <version>` を実行してください。
+
+シェルで仮想環境を有効化する場合は、次のスクリプトを `source` します。
+
+```bash
+source activate_python.bash
+```
+
+このスクリプトは `uv sync --locked --dry-run` でパッケージ不足を確認し、不足があれば `uv sync --locked` を実行してから `.venv/bin/activate` を読み込みます。直接実行すると現在のシェルに仮想環境が反映されないため、`bash activate_python.bash` ではなく `source activate_python.bash` を使ってください。
 
 ## 実行方法
 
